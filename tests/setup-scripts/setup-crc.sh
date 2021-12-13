@@ -2,9 +2,7 @@
 
 # inject env. variables from env properties file
 set -a
-cd ${WORKSPACE}/intellij-openshift-connector
-ls -al
-. tests/setup-scripts/prepare-env.sh
+. ${WORKSPACE}/intellij-openshift-connector/tests/setup-scripts/prepare-env.sh
 
 cd ${WORKSPACE}
 . ./local_env.properties

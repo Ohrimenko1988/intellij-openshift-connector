@@ -4,6 +4,9 @@
 # ${WORKSPACE}/cdk-scripts/scripts/cdk3-virt.sh
 
 # export workspace location that is os dependent - due to cygwin on windows
+
+echo "===>>> start environment setup"
+
 cd ${WORKSPACE}
 export WORKSPACE2=$(pwd)
 CONTENT="WORKSPACE2=${WORKSPACE2}"
@@ -42,3 +45,9 @@ URL="${URL}${CRC_URL}/${FILE_ENDING}"
 echo "${URL}" >> ${WORKSPACE2}/local_env.properties
 echo "OS=${OS}" >> ${WORKSPACE2}/local_env.properties
 echo "FILE_ENDING=${FILE_ENDING}" >> ${WORKSPACE2}/local_env.properties
+
+echo "===>>> finish environment setup"
+
+echo "===>>> local env file"
+cat ${WORKSPACE2}/local_env.properties
+echo "==============================>>>"
