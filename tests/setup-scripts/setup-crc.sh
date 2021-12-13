@@ -3,6 +3,7 @@
 # inject env. variables from env properties file
 set -a
 cd ${WORKSPACE}
+. ./prepare-env.sh
 . ./local_env.properties
 
 
