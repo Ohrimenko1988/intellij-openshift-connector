@@ -5,8 +5,10 @@ timeout(time: 90, unit: 'MINUTES') {
     stage('Checkout repo') {
       deleteDir()
       dir('intellij-openshift-connector') {
-        git url: "https://github.com/${FORK}/intellij-openshift-connector.git",
-          branch: "${BRANCH}"
+        // git url: "https://github.com/${FORK}/intellij-openshift-connector.git",
+        //   branch: "${BRANCH}"
+          git url: "https://github.com/Ohrimenko1988/intellij-openshift-connector.git",
+          branch: "iokhrime-pr-check"
       }
     }
     
