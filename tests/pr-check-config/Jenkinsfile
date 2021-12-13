@@ -27,7 +27,7 @@ timeout(time: 90, unit: 'MINUTES') {
 
                 stage('Run CRC') {
                     timeout(time: 45, unit: 'MINUTES') {
-                        sh '${WORKSPACE}intellij-openshift-connector/tests/setup-scripts/run-crc.sh'
+                        sh '${WORKSPACE}/intellij-openshift-connector/tests/setup-scripts/run-crc.sh'
                     }
                 }
             }
