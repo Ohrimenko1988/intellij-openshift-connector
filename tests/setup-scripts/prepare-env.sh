@@ -27,6 +27,7 @@ echo "HYPERVISOR=$HYPERVISOR" >> ${WORKSPACE2}/local_env.properties
 echo "BASEFILE_NAME=$BASEFILE_NAME" >> ${WORKSPACE2}/local_env.properties
 
 URL="URL="
+CRC_URL="http://cdk-builds.usersys.redhat.com/builds/crc/releases/latest"
 
 FILE_ENDING=
 OS=
