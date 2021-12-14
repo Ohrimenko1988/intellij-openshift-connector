@@ -17,9 +17,12 @@ crc_started() {
 
 cd ${WORKSPACE2}/crc
 
-## Start crc and install all necessary stuff
+# Cleanup the crc-output file
+> ${WORKSPACE}/crc-output.txt
 
-./${BASEFILE_NAME} start -p ${CRC_PULL_SECRET} --memory 18432 --cpus 6
+# Start crc and install all necessary stuff
+
+./${BASEFILE_NAME} start -p ${CRC_PULL_SECRET} --memory 18432 --cpus 6 | tee ${WORKSPACE}/crc-output.txt
 
 ./${BASEFILE_NAME} status || true
 
@@ -50,6 +53,8 @@ oc version
 # log into a cluster using oc
 # password can be obtained from ~/.crc/cache/crc_libvirt_4.5.1/kubeadmin-password
 # 4.5.1 string can be get from ./crc version or from client version: oc version
-pass=`cat ~/.crc/cache/crc_libvirt_$(oc version | head -n 1 | cut -d':' -f2 | xargs)/kubeadmin-password`
+# pass=`cat ~/.crc/cache/crc_libvirt_$(oc version | head -n 1 | cut -d':' -f2 | xargs)/kubeadmin-password`
+pass=$(cat ${WORKSPACE}/crc-output.txt | grep Password | awk 'NR==1{print $2}')
+echo "===>>>>  Password: ${pass}"
 oc login -u kubeadmin -p ${pass} https://api.crc.testing:6443 --insecure-skip-tls-verify
 
