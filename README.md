@@ -1,5 +1,4 @@
 test
-test
 # OpenShift Connector
 [plugin-repo]: https://plugins.jetbrains.com/plugin/12030-openshift-connector-by-red-hat
 [plugin-version-svg]: https://img.shields.io/jetbrains/plugin/v/12030-openshift-connector-by-red-hat.svg
